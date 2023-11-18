@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:Spatie calendar-links
+BEGIN:VEVENT
+UID:86ae9e85ee17af7eb5c6b6597a5d5a0b
+SUMMARY:Pets & Love - 12 Oct 2023 8:00am
+DTSTAMP;TZID=America/Bogota:20231012T080000
+DTSTART;TZID=America/Bogota:20231012T080000
+DTEND;TZID=America/Bogota:20231012T090000
+X-ALT-DESC;FMTTYPE=text/html:Salon name: Pets & Love \n\nSalon address: Calle 57 A Sur #79-37 \n\nSalon phone: +573184440993 \n\nSalon email: santiagorivasmolina@gmail.com \n\nBooked services:\nBaño Básico: 8:00am ➝ 9:00am\n\nBooking notes:\nEsto es un test 123\n\nBooking status: Confirmed
+LOCATION:Calle 57 A Sur #79-37
+END:VEVENT
+END:VCALENDAR

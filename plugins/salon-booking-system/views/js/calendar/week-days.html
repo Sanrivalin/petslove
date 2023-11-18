@@ -1,0 +1,32 @@
+<% if(assistants_mode){ %>
+    <% _.each(assistants_order, function(att_id){ %>
+        <div class="cal-row-fluid">
+            <div class="weekday-attendant cal-cell0">
+                <div class="day-highlight dh-attendant"><%= assistants_names[att_id].name %></div>
+            </div>
+            <% _.each([0, 1, 2, 3, 4, 5, 6], function(index){ %>
+                <div class="weekday<%= index %> cal-cell0">
+                    <% _.each(events[att_id], function(event){ console.log(events); %>
+                        <% if(event.start_day == index) { %>
+                            <div class="day-highlight dh-<%= event['class'] %>" data-event-class="<%= event['class'] %>"  data-toggle="tooltip" data-html="true" title="Click to edit this reservation">
+                                <a href="<%= event.url ? event.url : 'javascript:void(0)' %>" data-event-id="<%= event.id %>" class="event-item cal-event-week event<%= event.id %>"><%= event.title %></a>
+                            </div>
+                        <% } %>
+                    <% }) %>
+                </div>
+            <% }) %>
+        </div>
+    <% }) %>
+<% } else{ %>
+    <div class="cal-row-fluid">
+        <% _.each([0,1,2,3,4,5,6], function(index) { %>
+            <div class="weekday<%= index %> cal-cell1">
+                <% _.each(events, function(event){ if(event.start_day == index) { %>
+                    <div class="day-highlight dh-<%= event['class'] %>" data-event-class="<%= event['class'] %>"  data-toggle="tooltip" data-html="true" title="Click to edit this reservation">
+                        <a href="<%= event.url ? event.url : 'javascript:void(0)' %>" data-event-id="<%= event.id %>" class="event-item cal-event-week event<%= event.id %>"><%= event.title %></a>
+                    </div>
+                <%} }); %>
+            </div>
+        <% }) %>
+    </div>
+<% } %>
